@@ -77,20 +77,14 @@
     padding: var(--space-lg);
   }
 
-
-
 .site-header a {
-  color: white;
-  text-decoration: none;
-}
+    color: var(--color-white);
+    text-decoration: none;
+  }
 
-.site-header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 16px 0 0 0;
-  display: flex;
-  gap: 12px;
-}
+
+
+
 
 .site-header nav ul li a {
   color: white;
