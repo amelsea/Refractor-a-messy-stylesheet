@@ -172,57 +172,15 @@ form {
     padding: var(--space-lg);
     background: var(--color-surface);
   }
+ .section h2 {
+    color: var(--color-primary);
+    font-size: 32px;
+    margin-bottom: var(--space-sm);
+  }
 
 
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-  color: #222222;
-}
 
-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  font-size: 16px;
-}
 
-select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  font-size: 16px;
-}
-
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  font-size: 16px;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid #ffc627;
-}
-
-.section {
-  margin-bottom: 48px;
-}
-
-.section h2 {
-  color: #8c1d40;
-  font-size: 32px;
-  margin-bottom: 12px;
-}
 
 .resources {
   display: grid;
