@@ -27,13 +27,44 @@
     --body-font: Arial, Helvetica, sans-serif;
   }
 }
-body {
-  margin: 0;
-  background: white;
-  color: #222222;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-white);
+    color: var(--color-text);
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: bold;
+    color: var(--color-text);
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    font: inherit;
+    font-size: 16px;
+  }
 }
 
 header {
