@@ -178,6 +178,28 @@ form {
     margin-bottom: var(--space-sm);
   }
 
+footer {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--space-lg);
+    margin-top: var(--space-2xl);
+  }
+
+  footer a {
+    color: var(--color-accent);
+  }
+}
+
+@layer utilities {
+  .text-center,
+  .center {
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
 
 
 
