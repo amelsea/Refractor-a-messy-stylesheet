@@ -2,7 +2,31 @@
    This stylesheet is intentionally messy. Refactor it for architecture,
    tokens, components, utilities, states, and print support.
 */
+@layer foundation {
+  :root {
+    --color-primary: #8c1d40;
+    --color-accent: #ffc627;
+    --color-dark: #191919;
+    --color-text: #222222;
+    --color-white: #ffffff;
+    --color-surface: #f7f7f7;
+    --color-callout: #fff8df;
+    --color-border: #dddddd;
 
+    --space-xs: 6px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+
+    --content-max: 1100px;
+    --body-font: Arial, Helvetica, sans-serif;
+  }
+}
 body {
   margin: 0;
   background: white;
