@@ -201,7 +201,22 @@ footer {
   }
 }
 
+@layer states {
+  .site-header nav a:hover,
+  .site-header nav a[aria-current="page"],
+  .button:hover,
+  .btn:hover,
+  button:hover {
+    background: var(--color-accent);
+    color: var(--color-dark);
+  }
 
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 3px solid var(--color-accent);
+  }
+}
 
 
 .resources {
