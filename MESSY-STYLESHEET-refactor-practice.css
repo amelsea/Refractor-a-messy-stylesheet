@@ -115,34 +115,24 @@
     color: var(--color-text);
   }
 
+.button,
+  .btn,
+  button {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-sm) 18px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-.button {
-  display: inline-block;
-  background: #8c1d40;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-}
+  button {
+    border: 0;
+  }
 
-.btn {
-  display: inline-block;
-  background: #8c1d40;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-}
 
-button {
-  background: #8c1d40;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 4px;
-  border: 0;
-  font-weight: bold;
+
 }
 
 .button:hover,
