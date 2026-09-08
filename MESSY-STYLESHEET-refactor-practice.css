@@ -159,13 +159,15 @@
     font-weight: bold;
   }
 
+.callout,
+  .note,
+  .warning {
+    background: var(--color-callout);
+    border-left: 6px solid var(--color-accent);
+    padding: var(--space-md);
+    margin: var(--space-xl) 0;
+  }
 
-.callout {
-  background: #fff8df;
-  border-left: 6px solid #ffc627;
-  padding: 20px;
-  margin: 32px 0;
-}
 
 .note {
   background: #fff8df;
