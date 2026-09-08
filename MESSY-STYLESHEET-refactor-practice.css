@@ -146,38 +146,19 @@
   .resource h3 {
     color: var(--color-primary);
   }
-
-
-
-
-
-.event-card {
-  background: white;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  padding: 20px;
-}
-
-.speaker-card {
-  background: white;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  padding: 20px;
-}
-
 .card h3,
-.event-card h3,
-.speaker-card h3 {
-  color: #8c1d40;
-  margin-top: 0;
-}
+  .event-card h3,
+  .speaker-card h3 {
+    margin-top: 0;
+  }
 
-.card a,
-.event-card a,
-.speaker-card a {
-  color: #8c1d40;
-  font-weight: bold;
-}
+  .card a,
+  .event-card a,
+  .speaker-card a {
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
 
 .callout {
   background: #fff8df;
