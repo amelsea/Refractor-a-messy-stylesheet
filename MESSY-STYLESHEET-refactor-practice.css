@@ -167,27 +167,12 @@
     padding: var(--space-md);
     margin: var(--space-xl) 0;
   }
-
-
-.note {
-  background: #fff8df;
-  border-left: 6px solid #ffc627;
-  padding: 20px;
-  margin: 32px 0;
-}
-
-.warning {
-  background: #fff8df;
-  border-left: 6px solid #ffc627;
-  padding: 20px;
-  margin: 32px 0;
-}
-
 form {
-  border: 1px solid #dddddd;
-  padding: 24px;
-  background: #f7f7f7;
-}
+    border: 1px solid var(--color-border);
+    padding: var(--space-lg);
+    background: var(--color-surface);
+  }
+
 
 label {
   display: block;
