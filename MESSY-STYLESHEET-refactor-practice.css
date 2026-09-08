@@ -140,16 +140,16 @@
     border-radius: var(--radius-md);
     padding: var(--space-md);
   }
+.card h3,
+  .event-card h3,
+  .speaker-card h3,
+  .resource h3 {
+    color: var(--color-primary);
+  }
 
 
 
 
-.card {
-  background: white;
-  border: 1px solid #dddddd;
-  border-radius: 8px;
-  padding: 20px;
-}
 
 .event-card {
   background: white;
