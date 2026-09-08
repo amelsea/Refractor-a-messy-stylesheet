@@ -67,16 +67,17 @@
   }
 }
 
-header {
-  background: #8c1d40;
-  color: white;
-  padding: 24px;
-}
+@layer components {
 
-.site-header {
-  background: #8c1d40;
-  padding: 24px;
-}
+
+ .site-header,
+  header {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-lg);
+  }
+
+
 
 .site-header a {
   color: white;
