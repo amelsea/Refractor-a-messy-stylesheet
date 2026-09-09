@@ -3,7 +3,9 @@
    tokens, components, utilities, states, and print support.
 */
 
+
 @layer foundation, base, layout, components, utilities, states, responsive, print;
+
 
 
 @layer foundation {
@@ -24,6 +26,7 @@
   }
 }
 
+
 @layer base {
   body {
     margin: 0;
@@ -34,6 +37,7 @@
     line-height: 1.5;
   }
 }
+
 
 header,
 .site-header {
@@ -108,8 +112,10 @@ header,
 }
 
 
+
 @layer components {
 
+  
 
   .button,
   .btn,
@@ -123,7 +129,6 @@ header,
     font-weight: bold;
     border: 0;
   }
-
 
   .card,
   .event-card,
@@ -148,7 +153,6 @@ header,
     font-weight: bold;
   }
 
-
   .callout,
   .note,
   .warning {
@@ -158,6 +162,7 @@ header,
     margin: var(--space-large) 0;
   }
 }
+
 
 form {
   border: 1px solid #dddddd;
@@ -191,6 +196,7 @@ textarea {
 }
 
 
+
 footer {
   background: #191919;
   color: white;
@@ -201,6 +207,7 @@ footer {
 footer a {
   color: #ffc627;
 }
+
 
 
 @layer utilities {
@@ -216,7 +223,6 @@ footer a {
 
 @layer states {
 
-  
   .site-header nav a:hover,
   .site-header nav a[aria-current="page"] {
     background: #ffc627;
@@ -291,3 +297,4 @@ footer a {
     }
   }
 }
+
