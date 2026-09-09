@@ -2,153 +2,142 @@
    This stylesheet is intentionally messy. Refactor it for architecture,
    tokens, components, utilities, states, and print support.
 */
+
+@layer foundation, base, layout, components, utilities, states, responsive, print;
+
+
 @layer foundation {
   :root {
     --color-primary: #8c1d40;
     --color-accent: #ffc627;
     --color-dark: #191919;
-    --color-text: #222222;
-    --color-white: #ffffff;
-    --color-surface: #f7f7f7;
-    --color-callout: #fff8df;
+    --color-white: white;
     --color-border: #dddddd;
+    --color-callout: #fff8df;
 
-    --space-xs: 6px;
-    --space-sm: 12px;
-    --space-md: 20px;
-    --space-lg: 24px;
-    --space-xl: 32px;
-    --space-2xl: 48px;
+    --space-small: 12px;
+    --space-medium: 20px;
+    --space-large: 32px;
 
-    --radius-sm: 4px;
-    --radius-md: 8px;
-
-    --content-max: 1100px;
-    --body-font: Arial, Helvetica, sans-serif;
+    --radius-small: 4px;
+    --radius-medium: 8px;
   }
 }
-@layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
 
+@layer base {
   body {
     margin: 0;
-    background: var(--color-white);
-    color: var(--color-text);
-    font-family: var(--body-font);
+    background: white;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.5;
   }
+}
 
-  a {
-    color: var(--color-primary);
+header,
+.site-header {
+  background: #8c1d40;
+  color: white;
+  padding: 24px;
+}
+
+.site-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  gap: 12px;
+}
+
+.site-header nav a {
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+
+@layer layout {
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
   }
 
-  label {
-    display: block;
-    margin-bottom: var(--space-xs);
-    font-weight: bold;
-    color: var(--color-text);
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 32px 0;
   }
 
-  input,
-  select,
-  textarea {
-    width: 100%;
-    padding: var(--space-sm);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    margin-bottom: 16px;
-    font: inherit;
-    font-size: 16px;
+  .resources {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .section {
+    margin-bottom: 48px;
   }
 }
+
+
+.hero {
+  background: #f7f7f7;
+  border: 1px solid #dddddd;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.hero h1 {
+  color: #8c1d40;
+  font-size: 42px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #222222;
+}
+
 
 @layer components {
 
 
- .site-header,
-  header {
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: var(--space-lg);
-  }
-
-.site-header a {
-    color: var(--color-white);
-    text-decoration: none;
-  }
-
-.site-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 16px 0 0;
-    display: flex;
-    gap: var(--space-sm);
-  }
-
-.site-header nav a {
-    color: var(--color-white);
-    padding: 8px var(--space-sm);
-    border-radius: var(--radius-sm);
-  }
-
-.hero {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    padding: var(--space-xl);
-    margin-bottom: var(--space-xl);
-  }
-
- .hero h1 {
-    color: var(--color-primary);
-    font-size: 42px;
-    line-height: 1.1;
-    margin: 0 0 16px;
-  }
-  
-.hero p {
-    font-size: 18px;
-    color: var(--color-text);
-  }
-
-.button,
+  .button,
   .btn,
   button {
     display: inline-block;
     background: var(--color-primary);
     color: var(--color-white);
-    padding: var(--space-sm) 18px;
-    border-radius: var(--radius-sm);
+    padding: var(--space-small) 18px;
+    border-radius: var(--radius-small);
     text-decoration: none;
     font-weight: bold;
-  }
-
-  button {
     border: 0;
   }
 
-.card,
+
+  .card,
   .event-card,
-  .speaker-card,
-  .resource {
+  .speaker-card {
     background: var(--color-white);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--space-md);
+    border-radius: var(--radius-medium);
+    padding: var(--space-medium);
   }
-.card h3,
-  .event-card h3,
-  .speaker-card h3,
-  .resource h3 {
-    color: var(--color-primary);
-  }
-.card h3,
+
+  .card h3,
   .event-card h3,
   .speaker-card h3 {
+    color: var(--color-primary);
     margin-top: 0;
   }
 
@@ -159,36 +148,60 @@
     font-weight: bold;
   }
 
-.callout,
+
+  .callout,
   .note,
   .warning {
     background: var(--color-callout);
     border-left: 6px solid var(--color-accent);
-    padding: var(--space-md);
-    margin: var(--space-xl) 0;
-  }
-form {
-    border: 1px solid var(--color-border);
-    padding: var(--space-lg);
-    background: var(--color-surface);
-  }
- .section h2 {
-    color: var(--color-primary);
-    font-size: 32px;
-    margin-bottom: var(--space-sm);
-  }
-
-footer {
-    background: var(--color-dark);
-    color: var(--color-white);
-    padding: var(--space-lg);
-    margin-top: var(--space-2xl);
-  }
-
-  footer a {
-    color: var(--color-accent);
+    padding: var(--space-medium);
+    margin: var(--space-large) 0;
   }
 }
+
+form {
+  border: 1px solid #dddddd;
+  padding: 24px;
+  background: #f7f7f7;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #222222;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+
+.section h2 {
+  color: #8c1d40;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+
+footer {
+  background: #191919;
+  color: white;
+  padding: 24px;
+  margin-top: 48px;
+}
+
+footer a {
+  color: #ffc627;
+}
+
 
 @layer utilities {
   .text-center,
@@ -202,8 +215,14 @@ footer {
 }
 
 @layer states {
+
+  
   .site-header nav a:hover,
-  .site-header nav a[aria-current="page"],
+  .site-header nav a[aria-current="page"] {
+    background: #ffc627;
+    color: #191919;
+  }
+
   .button:hover,
   .btn:hover,
   button:hover {
@@ -214,13 +233,16 @@ footer {
   input:focus,
   select:focus,
   textarea:focus {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid #ffc627;
   }
 }
 
 @layer responsive {
   @media (max-width: 700px) {
-    .card-grid,
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+
     .resources {
       grid-template-columns: 1fr;
     }
@@ -237,26 +259,35 @@ footer {
 
 @layer print {
   @media print {
+    body {
+      background: white;
+      color: black;
+    }
+
     .site-header,
-    header,
     footer {
-      background: none;
-      color: #000;
+      background: white;
+      color: black;
     }
 
     .site-header a,
     footer a {
-      color: #000;
+      color: black;
     }
 
     .button,
     .btn,
     button {
-      background: none;
-      color: #000;
-      border: 1px solid #000;
+      background: white;
+      color: black;
+      border: 1px solid black;
+    }
+
+    .callout,
+    .note,
+    .warning {
+      background: white;
+      border-left: 3px solid black;
     }
   }
 }
-
-
